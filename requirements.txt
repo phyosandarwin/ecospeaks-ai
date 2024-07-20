@@ -1,0 +1,11 @@
+langchain
+langchain_community
+langchain_core
+langchain_google_genai
+langchain_openai
+openai
+pandas
+Plost
+Requests
+streamlit
+streamlit_option_menu
