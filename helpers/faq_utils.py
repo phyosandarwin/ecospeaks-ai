@@ -11,14 +11,13 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
-@st.cache_data(show_spinner=False, ttl=3600)
+
 def classify_text_with_llm(text, model):
     # Use LLM to classify if the text is related to environmental topics.
     text_prompt = f"Classify the following text as related to environmental topics or not:\n\n{text}\n\nIs this text related to environmental topics? Answer with 'Yes' or 'No'."
     response = model.invoke(text_prompt)
     return response.content.lower() == 'yes'
 
-@st.cache_data(show_spinner=False)
 def process_document(source_doc):
     """
     Process the uploaded document (PDF or TXT) and return the text content.
@@ -38,7 +37,7 @@ def process_document(source_doc):
     os.remove(tmp_file_path)
     return context
 
-@st.cache_data(show_spinner=False)
+
 def create_vector_database(chunks):
     """
     Create and return a vector database from the text chunks.
@@ -48,7 +47,6 @@ def create_vector_database(chunks):
     return vectordb
 
 
-@st.cache_data(show_spinner=False)
 def create_qa_chain(vectordb, query, model):
     """
     Create and return a question-answering chain.
