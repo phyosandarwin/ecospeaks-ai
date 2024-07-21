@@ -6,6 +6,7 @@ langchain_openai
 openai
 pandas
 Plost
+pypdf
 Requests
 streamlit
 streamlit_option_menu
