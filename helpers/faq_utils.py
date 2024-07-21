@@ -5,7 +5,7 @@ from langchain import hub
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 def format_docs(docs):
@@ -42,7 +42,7 @@ def create_vector_database(chunks):
     Create and return a vector database from the text chunks.
     """
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    vectordb = Chroma.from_texts(chunks, embeddings)
+    vectordb = FAISS.from_texts(chunks, embeddings)
     return vectordb
 
 
