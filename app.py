@@ -3,7 +3,6 @@ import streamlit as st
 st.set_page_config(page_title='Ecospeaks', page_icon='🌿', layout='wide')
 st.logo('assets/logo.png')
 
-
 st.columns([2,3,1])[1].title('EcoSpeaks.ai')
 aboutText = "EcoSpeak is an LLM-powered web application to educate individuals on sustainability issues and guide them to reach their personalized sustainable goals."
 st.columns([0.5,3,0.5])[1].success(aboutText, icon="🌿")

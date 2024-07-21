@@ -9,26 +9,17 @@ os.environ['GOOGLE_API_KEY'] = st.secrets["google"]['GOOGLE_API_KEY']
 st.set_page_config(
     page_title="Gemini FAQ",
     page_icon="🤖",
-    layout='wide',
-    initial_sidebar_state='expanded'
+    layout='wide'
 )
-st.markdown(
-        """
-       <style>
-       [data-testid="stSidebar"][aria-expanded="true"]{
-           min-width: 320px;
-       }
-       """,
-        unsafe_allow_html=True,
-)  
+st.logo('assets/logo.png')
 
 ### streamlit UI ###
 st.subheader('🤖 Environmental FAQ Chat')
 st.caption("Currently only supporting PDF and TXT files. Powered by Langchain and Gemini Pro")
 
-source_doc = st.sidebar.file_uploader(label="Upload your environmental-related document", type=["pdf", "txt"])
+st.markdown(f''':red[Upload your document before submitting your query]''')
+source_doc = st.file_uploader(label="Upload your environmental-related document", type=["pdf", "txt"])
 
-st.markdown(f''':green-background[:red[First, remember to upload your document in the sidebar as shown 👈]]''')
 query = st.text_input("Enter your query:")
 
 if st.button("Submit"):

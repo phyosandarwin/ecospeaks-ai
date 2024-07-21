@@ -5,6 +5,7 @@ from helpers.news_articles_helpers import *
 
 st.set_page_config(page_title='NewsDigest', page_icon='🗞️', layout='centered')
 st.logo('assets/logo.png')
+ 
 
 # Load credentials
 azure_api_key = st.secrets['azure']['AZURE_OPENAI_KEY']
