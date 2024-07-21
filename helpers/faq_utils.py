@@ -37,7 +37,6 @@ def process_document(source_doc):
     os.remove(tmp_file_path)
     return context
 
-
 def create_vector_database(chunks):
     """
     Create and return a vector database from the text chunks.
