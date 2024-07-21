@@ -3,6 +3,7 @@ langchain==0.2.10
 langchain_community==0.2.9
 langchain_core==0.2.22
 langchain_google_genai==1.0.7
+langchainhub
 pandas==2.2.2
 Plost==0.2.5
 Requests==2.32.3
